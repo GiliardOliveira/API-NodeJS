@@ -34,22 +34,22 @@
             "in": "query"
           },
           {
-            "nome": "description",
+            "name": "description",
             "description": "",
             "in": "query"
           },
           {
-            "nome": "description",
+            "name": "description",
             "description": "",
             "in": "query"
           },
           {
-            "nome": "active",
+            "name": "active",
             "description": "",
             "in": "query"
           },
           {
-            "nome": "tags",
+            "name": "tags",
             "description": "",
             "in": "query"
           }
