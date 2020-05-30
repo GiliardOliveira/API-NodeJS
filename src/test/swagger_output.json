@@ -23,39 +23,7 @@
       "post": {
         "tags": [],
         "description": "",
-        "parameters": [
-          [{
-            "title": "title",
-            "in": "body",
-            "required": true,
-            "type": "string"
-          }],
-          [{
-            "description": "description",
-            "in": "body",
-            "required": true
-          }],
-          [{
-            "price": "price",
-            "in": "body",
-            "required": true
-          }],
-          [{
-            "active": "active",
-            "in": "body",
-            "required": true
-          }],
-          [{
-            "slug": "slug",
-            "in": "body",
-            "required": true
-          }],
-          [{
-            "tags": [{}],
-            "in": "body",
-            "required": true
-          }]
-        ],
+        "parameters": [],
         "responses": {}
       }
     },
@@ -68,6 +36,12 @@
           "in": "path",
           "required": true
         }],
+        [{
+          "name": "id",
+          "in": "path",
+          "required": true
+        }],
+
         "responses": {}
       },
       "delete": {
@@ -124,7 +98,7 @@
         }],
         "responses": {}
       }
-    },
-    "definitions": {}
-  }
+    }
+  },
+  "definitions": {}
 }
