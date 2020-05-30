@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
 
 
 app.use('/', indexRoutes);
-app.use('/products', productsRoutes);
+app.use('/', productsRoutes);
 
 
 module.exports = app;

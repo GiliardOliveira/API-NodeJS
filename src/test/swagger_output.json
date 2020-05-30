@@ -15,21 +15,15 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/": {
+    "/products": {
       "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      },
-      "get": {
         "tags": [],
         "description": "",
         "parameters": [],
         "responses": {}
       }
     },
-    "/{id}": {
+    "/products/{id}": {
       "put": {
         "tags": [],
         "description": "",
@@ -55,7 +49,15 @@
         "responses": {}
       }
     },
-    "/{slug}": {
+    "/products/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/products/{slug}": {
       "get": {
         "tags": [],
         "description": "",
@@ -69,7 +71,7 @@
         "responses": {}
       }
     },
-    "/admin/{id}": {
+    "/products/admin/{id}": {
       "get": {
         "tags": [],
         "description": "",
@@ -83,7 +85,7 @@
         "responses": {}
       }
     },
-    "/tags/{tag}": {
+    "/products/tags/{tag}": {
       "get": {
         "tags": [],
         "description": "",
