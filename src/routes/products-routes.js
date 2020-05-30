@@ -4,12 +4,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/productControler');
 
-/**
- * @swagger
- * /producsts
- * get:
- *  description: Use to request All
- */
+
 router.post('/', controller.post);
 
 router.put('/:id', controller.put);

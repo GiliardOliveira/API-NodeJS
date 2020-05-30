@@ -8,8 +8,20 @@ const app = express();
 const router = express.Router();
 
 
-const swaggerJsDoc = require('swagger-jsdoc')
+
+//conexao com banco
+
+mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority');
+
+//models
+const Product = require('./models/productModel')
+
+//carrega as rotas
+const indexRoutes = require('./routes/index-routes');
+const productsRoutes = require('./routes/products-routes');
+
 const swaggerUI = require('swagger-ui-express')
+const swaggerJsDoc = require('swagger-jsdoc')
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -28,16 +40,6 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 
-//conexao com banco
-
-mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority');
-
-//models
-const Product = require('./models/productModel')
-
-//carrega as rotas
-const indexRoutes = require('./routes/index-routes');
-const productsRoutes = require('./routes/products-routes');
 
 
 
@@ -56,6 +58,12 @@ app.use(function (req, res, next) {
 });
 
 
+/**
+ * @swagger
+ * /producsts
+ * get:
+ *  description: Use to request All
+ */
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs))
