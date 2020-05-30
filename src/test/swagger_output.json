@@ -23,107 +23,108 @@
       "post": {
         "tags": [],
         "description": "",
+        "parameters": [
+          [{
+            "title": "title",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }],
+          [{
+            "description": "description",
+            "in": "body",
+            "required": true
+          }],
+          [{
+            "price": "price",
+            "in": "body",
+            "required": true
+          }],
+          [{
+            "active": "active",
+            "in": "body",
+            "required": true
+          }],
+          [{
+            "slug": "slug",
+            "in": "body",
+            "required": true
+          }],
+          [{
+            "tags": [{}],
+            "in": "body",
+            "required": true
+          }]
+        ],
+        "responses": {}
+      }
+    },
+    "/products/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
         "parameters": [{
-          "title": "title",
-          "in": "body",
-          "required": true,
-          "type": "string"
-        }],
-        [{
-          "description": "description",
-          "in": "body",
+          "name": "id",
+          "in": "path",
           "required": true
         }],
-        [{
-          "price": "price",
-          "in": "body",
+        "responses": {}
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [{
+          "name": "id",
+          "in": "path",
           "required": true
         }],
-        [{
-          "active": "active",
-          "in": "body",
+        "responses": {}
+      }
+    },
+    "/products/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/products/{slug}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [{
+          "name": "slug",
+          "in": "path",
           "required": true
         }],
-        [{
-          "slug": "slug",
-          "in": "body",
+        "responses": {}
+      }
+    },
+    "/products/admin/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [{
+          "name": "id",
+          "in": "path",
           "required": true
         }],
-        [{
-          "tags": [{}],
-          "in": "body",
+        "responses": {}
+      }
+    },
+    "/products/tags/{tag}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [{
+          "name": "tag",
+          "in": "path",
           "required": true
-        }]
-      }],
-    "responses": {}
+        }],
+        "responses": {}
+      }
+    },
+    "definitions": {}
   }
-},
-"/products/{id}": {
-  "put": {
-    "tags": [],
-    "description": "",
-    "parameters": [{
-      "name": "id",
-      "in": "path",
-      "required": true
-    }],
-    "responses": {}
-  },
-  "delete": {
-    "tags": [],
-    "description": "",
-    "parameters": [{
-      "name": "id",
-      "in": "path",
-      "required": true
-    }],
-    "responses": {}
-  }
-},
-"/products/": {
-  "get": {
-    "tags": [],
-    "description": "",
-    "parameters": [],
-    "responses": {}
-  }
-},
-"/products/{slug}": {
-  "get": {
-    "tags": [],
-    "description": "",
-    "parameters": [{
-      "name": "slug",
-      "in": "path",
-      "required": true
-    }],
-    "responses": {}
-  }
-},
-"/products/admin/{id}": {
-  "get": {
-    "tags": [],
-    "description": "",
-    "parameters": [{
-      "name": "id",
-      "in": "path",
-      "required": true
-    }],
-    "responses": {}
-  }
-},
-"/products/tags/{tag}": {
-  "get": {
-    "tags": [],
-    "description": "",
-    "parameters": [{
-      "name": "tag",
-      "in": "path",
-      "required": true
-    }],
-    "responses": {}
-  }
-}
-},
-"definitions": {}
 }
