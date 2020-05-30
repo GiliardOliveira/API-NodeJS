@@ -3,6 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/productControler');
+const app = require('../app.js')
+
 
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
@@ -23,7 +25,6 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs))
-
 
 router.post('/', controller.post);
 
