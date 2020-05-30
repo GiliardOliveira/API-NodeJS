@@ -60,9 +60,11 @@ app.use(function (req, res, next) {
 
 /**
  * @swagger
- * /producsts
+ * /products:
  * get:
- *  description: Use to request All
+ *   description: Use to request All
+ *   responses: 200
+ *    description: sucess
  */
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
