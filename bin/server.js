@@ -1,11 +1,17 @@
 'use strict';
 
 
+
+
 const app = require('../src/app');
 const http = require('http');
 const debug = require('debug')('nodestr:server');
 
 
+//SWAGGER
+const swaggerUI = require('swagger-ui-express');
+const swaggerFile = require('../swagger_output.json')
+app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
