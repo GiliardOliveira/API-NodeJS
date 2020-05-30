@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "https://api-products-nodejs.herokuapp.com/",
+  "host": "api-products-nodejs.herokuapp.com",
   "basePath": "/",
   "tags": [],
   "schemes": [
