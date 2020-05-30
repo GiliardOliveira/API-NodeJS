@@ -27,9 +27,33 @@
             "name": "title",
             "description": "",
             "in": "query"
+          },
+          {
+            "name": "slug",
+            "description": "",
+            "in": "query"
+          },
+          {
+            "nome": "description",
+            "description": "",
+            "in": "query"
+          },
+          {
+            "nome": "description",
+            "description": "",
+            "in": "query"
+          },
+          {
+            "nome": "active",
+            "description": "",
+            "in": "query"
+          },
+          {
+            "nome": "tags",
+            "description": "",
+            "in": "query"
           }
         ],
-
         "responses": {}
       }
     },
