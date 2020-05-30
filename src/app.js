@@ -13,10 +13,10 @@ const router = express.Router();
 mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority');
 
 //models
-const Product = require('./models/product')
+const Product = require('./models/productModel')
 
 //carrega as rotas
-const indexRoutes = require('./routes/index');
+const indexRoutes = require('./routes/index-routes');
 const productsRoutes = require('./routes/products-routes');
 
 
