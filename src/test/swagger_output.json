@@ -25,12 +25,8 @@
         "description": "",
         "parameters": [{
             "name": "title",
-            "description": "teste",
+            "description": "",
             "in": "query"
-          },
-          {
-
-
           }
         ],
 
