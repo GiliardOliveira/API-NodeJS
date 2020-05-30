@@ -7,6 +7,27 @@ const mongoose = require('mongoose');
 const app = express();
 const router = express.Router();
 
+
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUI = require('swagger-ui-express')
+
+const swaggerOptions = {
+    swaggerDefinition: {
+        info: {
+            title: 'Api Node Js',
+            description: "Api Nodejs + MongoDB + Travis CI + Heroku",
+            contact: {
+                name: "github.com/GiliardOliveira"
+            },
+            servers: ['https://api-products-nodejs.herokuapp.com/']
+        }
+    },
+    apis: ['./routes/productsRoutes.js']
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+
+
 //conexao com banco
 
 mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority');
@@ -17,6 +38,7 @@ const Product = require('./models/productModel')
 //carrega as rotas
 const indexRoutes = require('./routes/index-routes');
 const productsRoutes = require('./routes/products-routes');
+
 
 
 app.use(bodyParser.json({
@@ -34,9 +56,8 @@ app.use(function (req, res, next) {
 });
 
 
-
-
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs))
 
 module.exports = app;
