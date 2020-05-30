@@ -23,14 +23,14 @@
       "post": {
         "tags": [],
         "description": "",
-        "parameters": [
-          "title",
-          "description",
-          "price",
-          "active",
-          "slug",
-          "tags"
-        ],
+        "parameters": [{
+          "title":"title",
+          "description":"description",
+          "price": "price",
+          "active": "active",
+          "slug": "slug",
+          "tags":[{}]
+        }],
         "responses": {}
       }
     },
