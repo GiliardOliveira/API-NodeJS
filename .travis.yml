@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "12"
+install:
+  - npm install newman
+
+services:
+  - mongodb
+
+script:
+  - newman run test/API-NODE.postman_collection.json
+
+  

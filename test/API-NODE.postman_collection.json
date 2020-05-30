@@ -1,0 +1,133 @@
+{
+	
+	"info": {
+		"_postman_id": "2c00a9e7-6b6f-4737-a8da-d0331544c189",
+		"name": "API-NODE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://api-nodeopehr.herokuapp.com/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"tesSSSte\",\n\t\"slug\": \"teste555\",\n\t\"description\": \"teste\",\n\t\"price\": 200,\n\t\"active\": true,\n\t\"tags\": [\"teste\",\"teste\",\"teste\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-products-nodejs.herokuapp.com/products",
+					"protocol": "https",
+					"host": [
+						"api-products-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-products-nodejs.herokuapp.com/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Mouse Gamer\",\n\t\"slug\": \"mouse-gamer\",\n\t\"description\": \"Mouse Gamer\",\n\t\"price\": \"666\",\n\t\"active\": true,\n\t\"tags\": [\"informatica\",\"mouse\",\"games\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-products-nodejs.herokuapp.com/products/5ed144405460ee1c6013684e",
+					"protocol": "https",
+					"host": [
+						"api-products-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"5ed144405460ee1c6013684e"
+					]
+				},
+				"description": "passando /id"
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-products-nodejs.herokuapp.com/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "61fb6665-2ee9-49d8-b496-53fee728569e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-products-nodejs.herokuapp.com/products/5ed144405460ee1c6013684e",
+					"protocol": "https",
+					"host": [
+						"api-products-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"5ed144405460ee1c6013684e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-products-nodejs.herokuapp.com/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-products-nodejs.herokuapp.com/products",
+					"protocol": "https",
+					"host": [
+						"api-products-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
