@@ -58,14 +58,7 @@ app.use(function (req, res, next) {
 });
 
 
-/**
- * @swagger
- * /products:
- * get:
- *   description: Use to request All
- *   responses: 200
- *    description: sucess
- */
+
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs))
