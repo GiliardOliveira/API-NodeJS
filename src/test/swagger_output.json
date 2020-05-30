@@ -23,7 +23,17 @@
       "post": {
         "tags": [],
         "description": "",
-        "parameters": [],
+        "parameters": [{
+            "name": "title",
+            "description": "teste",
+            "in": "query"
+          },
+          {
+
+
+          }
+        ],
+
         "responses": {}
       }
     },
@@ -36,12 +46,6 @@
           "in": "path",
           "required": true
         }],
-        [{
-          "name": "id",
-          "in": "path",
-          "required": true
-        }],
-
         "responses": {}
       },
       "delete": {
