@@ -7,25 +7,6 @@ const mongoose = require('mongoose');
 const app = express();
 const router = express.Router();
 
-const swaggerJsDoc = require('swagger-jsdoc')
-const swaggerUI = require('swagger-ui-express')
-
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            title: 'Api Node Js',
-            description: "Api Nodejs + MongoDB + Travis CI + Heroku",
-            contact: {
-                name: "github.com/GiliardOliveira"
-            },
-            servers: ['https://api-products-nodejs.herokuapp.com/']
-        }
-    },
-    apis: ['./routes/productsRoutes.js']
-}
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs))
 
 
 
