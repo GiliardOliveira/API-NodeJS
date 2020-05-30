@@ -8,6 +8,5 @@ services:
   - mongodb
 
 script:
-  - newman run test/API-NODE.postman_collection.json
+  - newman run src/test/API-NODE.postman_collection.json
 
-  

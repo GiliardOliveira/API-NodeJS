@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
+
 exports.get = (req, res, next) => {
     Product.find({
             active: true
@@ -28,7 +29,6 @@ exports.getBySlug = (req, res, next) => {
         });
 }
 
-
 exports.getByID = (req, res, next) => {
     Product.findById(req.params.id)
         .then(data => {
@@ -52,10 +52,6 @@ exports.getByTag = (req, res, next) => {
         });
 }
 
-
-
-
-
 exports.post = (req, res, next) => {
     var product = new Product(req.body); //ou product();
     //product.title = req.body.title;
@@ -75,6 +71,7 @@ exports.post = (req, res, next) => {
 
 
 };
+
 exports.put = (req, res, next) => {
 
     Product
