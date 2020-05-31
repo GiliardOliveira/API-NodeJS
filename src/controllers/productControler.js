@@ -2,113 +2,91 @@
 
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
+const repository = require('../repositories/productsRepository')
 
-
-exports.get = (req, res, next) => {
-    Product.find({
-            active: true
-        }, 'title price slug')
-        .then(data => {
-            res.status(200).send(data);
+exports.get = async (req, res, next) => {
+    try {
+        const data = await repository.get()
+        res.status(200).send(data)
+    } catch (e) {
+        res.status(500).send({
+            message: "Falha"
         })
-        .catch(e => {
-            res.status(400).send(e);
-        });
+    }
 }
 
-exports.getBySlug = (req, res, next) => {
-    Product.findOne({
-            slug: req.params.slug,
-            active: true
-        }, 'title description price slug tags')
-        .then(data => {
-            res.status(200).send(data);
+exports.getBySlug = async (req, res, next) => {
+    try {
+        const data = await repository.getBySlug(req.params.slug);
+        res.status(200).send(data)
+    } catch (e) {
+        res.status(500).send({
+            message: "Falha"
         })
-        .catch(e => {
-            res.status(400).send(e);
-        });
+    }
 }
 
-exports.getByID = (req, res, next) => {
-    Product.findById(req.params.id)
-        .then(data => {
-            res.status(200).send(data);
+exports.getByID = async (req, res, next) => {
+    try {
+        const data = await repository.getByID(req.params.id);
+        res.status(200).send(data)
+    } catch (e) {
+        res.status(500).send({
+            message: "Falha"
         })
-        .catch(e => {
-            res.status(400).send(e);
-        });
+    }
 }
 
-exports.getByTag = (req, res, next) => {
-    Product.find({
-            tags: req.params.tag,
-            active: true
-        }, 'title description price slug tags')
-        .then(data => {
-            res.status(200).send(data);
+exports.getByTag = async (req, res, next) => {
+    try {
+        const data = await repository.getByTag(req.params.tag);
+        res.status(200).send(data)
+    } catch (e) {
+        res.status(500).send({
+            message: "Falha"
         })
-        .catch(e => {
-            res.status(400).send(e);
-        });
+    }
 }
 
-exports.post = (req, res, next) => {
-    var product = new Product(req.body); //ou product();
-    //product.title = req.body.title;
-    product.save()
-        .then(x => {
-            res.status(201).send({
-                message: "sucess"
-            });
-        })
-        .catch(e => {
-            res.status(400).send({
-                message: "Failed",
-                data: e
-            });
+exports.post = async (req, res, next) => {
+    try {
+        await repository.create(req.body)
+        res.status(201).send({
+            message: "sucess"
         });
-
+    } catch (e) {
+        res.status(500).send({
+            message: "Falha"
+        })
+    }
 };
 
-exports.put = (req, res, next) => {
-
-    Product
-        .findByIdAndUpdate(req.params.id, {
-            $set: {
-                title: req.body.title,
-                description: req.body.description,
-                slug: req.body.slug,
-                price: req.body.price,
-                tags: req.body.tags
-            }
-        }).then(x => {
-            res.status(200).send({
-                message: "sucess"
-            });
+exports.put = async (req, res, next) => {
+    try {
+        await repository.update(req.params.id, req.body);
+        res.status(201).send({
+            message: "sucess"
         })
-        .catch(e => {
-            res.status(400).send({
-                message: "Failed",
-                data: e
-            });
-        });
+    } catch (e) {
+        res.status(400).send({
+            message: "Falha"
+        })
+    }
 
 };
 
 
-exports.delete = (req, res, next) => {
-
-    Product
-        .findByIdAndRemove(req.params.id)//posso escolher apagar por id ou body(req.body.id)
-        .then(x => {
-            res.status(200).send({
-                message: "sucess"
-            });
+exports.delete = async (req, res, next) => {
+    //posso escolher apagar por id ou body(req.body.id)
+    try {
+        await repository.delete(req.params.id)
+        res.status(200).send({
+            message: "sucess"
         })
-        .catch(e => {
-            res.status(400).send({
-                message: "Failed",
-                data: e
-            });
-        });
-};
+    } catch (error) {
+        res.status(500).send({
+            message: "falha"
+        })
+
+    }
+}

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/server.js"
+    "start": "node ./bin/server.js",
+    "test": "nodemon ./bin/server.js"
   },
   "author": "",
   "license": "ISC",

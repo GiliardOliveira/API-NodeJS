@@ -9,14 +9,22 @@ const router = express.Router();
 
 //conexao com banco
 
-mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://giliard:drailig@cluster0-krgxt.azure.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 //models
 const Product = require('./models/productModel')
+const Customer = require('./models/customerModel')
+const Order = require('./models/orderModel')
 
 //carrega as rotas
 const indexRoutes = require('./routes/index-routes');
 const productsRoutes = require('./routes/products-routes');
+const costumerRoutes = require('./routes/costumer-routes');
 
 app.use(bodyParser.json({
     limit: '5mb'
@@ -36,5 +44,6 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRoutes);
 app.use('/', productsRoutes);
+app.use('/', costumerRoutes);
 
 module.exports = app;
