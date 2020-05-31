@@ -26,32 +26,52 @@
         "parameters": [{
             "name": "title",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "slug",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "name": "description",
+            "nome": "description",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "name": "description",
+            "nome": "price",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schema": {
+              "type": "float"
+            }
           },
           {
-            "name": "active",
+            "nome": "active",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schemas": {
+              "type": "boolean"
+
+            }
+
           },
           {
-            "name": "tags",
+            "nome": "tags",
             "description": "",
-            "in": "query"
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {}
