@@ -13,13 +13,11 @@ const schema = new Schema({
     number: {
         type: String,
         required: true,
-
     },
     createDate: {
         type: Date,
         required: true,
         default: Date.now
-
     },
     status: {
         type: String,

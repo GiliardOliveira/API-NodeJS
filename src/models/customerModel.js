@@ -20,7 +20,12 @@ const schema = new Schema({
         type: String,
         required: true
     },
-
+    estado: {
+        type: String
+    },
+    cidade: {
+        type: String
+    },
     password: {
         type: String,
         required: true,
