@@ -1,5 +1,7 @@
 const repository = require('../repositories/orderRepository')
 const guid = require('guid')
+const mongoose = require('mongoose')
+const Order = mongoose.model('Order')
 
 exports.post = async (req, res, next) => {
     try {
@@ -28,4 +30,18 @@ exports.get = async (req, res, next) => {
             message: "Falha"
         })
     }
+}
+
+
+exports.getByCPF = (req, res, next) => {
+    Order.find({
+        cpf: req.params.cpf
+    }).
+    then(data => {
+        res.status(200).send(data)
+    }).catch(e => {
+        res.status(400).send({
+            message: 'failed'
+        })
+    })
 }

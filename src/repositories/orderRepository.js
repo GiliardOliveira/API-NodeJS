@@ -10,7 +10,7 @@ exports.create = async (body) => {
 }
 
 exports.get = async (body) => {
-    var res = await Order.find({},'status number itens price')
+    var res = await Order.find({},'number itens price')
     .populate('customer','name')
     .populate('itens.product','title');
     return res;
