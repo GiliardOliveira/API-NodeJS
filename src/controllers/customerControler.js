@@ -8,6 +8,7 @@ exports.post = async (req, res, next) => {
             name: req.body.name,
             email: req.body.email,
             cpf: req.body.cpf,
+            estado: req.body.estado,
             password: md5(req.body.password)
         })
         res.status(201).send({

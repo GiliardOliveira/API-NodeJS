@@ -24,6 +24,10 @@ const schema = new Schema({
         type: String,
         required: true,
 
+    },
+    estado: {
+        type: String
+
     }
 })
 
